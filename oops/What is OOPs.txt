@@ -1,0 +1,192 @@
+A> What is OOPs?
+Ans: OOPs is a practice to organise your code to model real-world things. It allows us to bundle related functions and data into 'objects'. This increases code reusability and helps in structuring a program by bundling associated data and methods into one object.
+
+B> What is a class with an example?
+
+Ans: Class is like a blueprint from which individual objects are created. It defines a set of attributes and methods that the created objects will have. For example, there is a Car class that has attributes for colour and model, as well as methods for stopping and starting.
+
+class Car():
+	def __inti__(self, color, model):
+		self.color = color
+		self.model = model
+        
+	def start(self):
+		return f"{self.model} started"
+	
+	def stop(self):
+		return f"{self.model} stopped"
+
+
+c> What is an object with an example?
+
+Ans: An object is an instance of a class. For example, if the "Car" is a blueprint, then my_car is an object with a specific blue colour and a Verion model of that class. We can create as many objects as we want from a single class.
+
+my_car = Car("Mad Black", "Verion")
+
+What is an inheritance with an example?
+
+Ans: Inheritance allows a child class to inherit attributes and methods of a parent class. It promotes code reuse. For example, a Dog and a Cat class are child classes of an Animal class, which inherit the name attribute and speak method from it.
+
+class Animal():
+	def __init__(self, name):
+		self.name = name
+	
+	def speak(self):
+		raise NotImplementedError("Subclass must implement this method")
+
+class Dog(Animal):
+	def speak(self):
+		return f"{self.name} says Woof!"
+
+class Cat(Animal):
+	def speak(self):
+		return f"{self.name} says Meow!"
+
+Inheritance Types:
+
+ 1) Single inheritance: There is only one parent and child class, where the child inherits traits of the parent class. A -> B.
+
+ 2) Multiple inheritance: Child class inherits traits from multiple parent classes. A, B -> C
+
+ 3) Multilevel inheritance: A class inherits from another class, which is a child class of another class. A -> B-> C.
+
+ 4) Hierarchical Inheritance: This is when more than one child class inherits from a single parent class. A -> B, C
+
+ 5) Hybrid inheritance: A combination of different types of inheritance, usually multiple and multilevel inheritance.
+
+
+
+D> What is a Polymorphism with an example?
+
+Ans: Polymorphism means that objects from different classes are treated in the same way. A single function or method can work on different types of objects. For example, the speak() method on both a Dog and a Cat can be called from the same function, but behave differently for each one.
+
+my_dog = Dog("Buddy")
+my_cat = Cat("Mona")
+
+def make_animal_speak(animal):
+	print(animal.speak())
+
+make_animal_speak(my_dog)
+make_animal_speak(my_cat)
+
+Polymorphism Types:
+ 
+ 1) Method Overriding (Runtime Polymorphism): A child class provides implementation to the method that is already defined in the parent class. The decision on which method run is made at runtime.
+
+class Animal:
+    def speak(self):
+        return "Some generic animal sound"
+
+class Dog(Animal):
+    def speak(self):
+	return "Woof!"
+
+class Cat(Animal):
+    def speak(self):
+        return "Meow!"
+
+ 2) Method Overloading (Compile-time Polymorphism): There are multiple methods with the same name in the same class but with different numbers or types of parameters. The decision on which method run is made at compile-time.
+
+class Calculator:
+    def add(self, a, b, c=0):
+        return a + b + c
+
+calc = Calculator()
+print(calc.add(2, 3))   
+print(calc.add(2, 3, 5))
+
+
+E> What is an encapsulation with an example?
+
+Ans: Encapsulation is the building of data and methods that operate on that data into the class itself. It restricts direct access to an object's data. You provide public methods to access and modify the data to prevent accidental changes. For example, in a BankAccount class, the balance can be made private. We then provide public methods like deposit() and withdraw() to interact with the balance safely, preventing it from being set to an invalid value directly.
+
+class BankAccount():
+	def __init__(self, initial_balance):
+		self.__balance = initiall_balance
+	
+	def deposit(self, amount):
+		self.__balance += amount
+		print(f"Deposited ${amount}. New balance is ${self.__balance}.")
+	
+	def withdraw(self, amount):
+        	if 0 < amount <= self.__balance:
+            		self.__balance -= amount
+           		print(f"Withdrew ${amount}. New balance is ${self.__balance}.")
+       		else:
+        		print("Invalid withdrawal amount.")
+	def get_balance(self):
+		print(self.__balance)
+
+my_acount = BalancAcount(100)
+my_acount.deposit(1000000)
+my_withdraw(300000)
+my_acount.get_balance()
+
+F> What is an abstraction with an example?
+
+Ans: An Abstraction means hiding the complex implementation details and showing only the essential features of an object. For example, a Vehicle class has an abstract method of drive. Any class that inherits Vehicle, like Car, must implement its own derive method.
+
+from abc import ABC, abstractmethod
+
+class Vehicle(ABC):
+    @abstractmethod
+    def drive(self):
+        pass
+
+class Car(Vehicle):
+    def drive(self):
+        print("The car is driving on the road.")
+
+G> What are a constructor and a destructor?
+Ans: 1) A constructor is a special method that is called when the object is created. Which initialises an attribute of a new object.
+     2) This method is called just before an object is destroyed or removed from memory.
+
+H> Class Variables vs. Instance Variables.
+
+Ans: 1) Class Variables are shared by all instances of the class. There is only one copy. They are defined inside the class, but outside the class variables.
+
+     2) Instance Variables are unique to each instance. It's defined inside the __init__ method and is prefixed with self.
+class A():
+	profession = "Enginer"
+	def __init__(self,name):
+		self.name = name
+person = A("Manish")
+print(person.profession)
+
+I> Class, Instance and Static Methods.
+
+Ans: 1) Class methods are those that are shared with all the instances of the class and cannot access an instance variable. Marked with the @classmethod decorator and takes cls as the first argument. They can create an instance using a factory method.
+
+     2) Instance methods are those that take the first argument as self and access and modify the instance variables.
+
+     3) Static methods are those that are marked with @saticmethod decorator. They do not take self and cls as arguments. Can't access or modify the class and instance variables. They are just for utility purpose for the class only.
+
+class A():
+	def __init__(self,name):
+		self.name = name
+	@classmehod
+	def category(cls):
+		return cls("Employee")
+	@saticmethod
+	def experience(position):
+		return "1 year" if position == "fresher" 
+
+J> Composition over Inheritance
+
+Ans: 1) Composition: You use this when an object is built from other objects. A Car has an Engine and has Wheels. The Car is not an Engine, but it contains one and uses it. Composition is often more flexible and easier to manage than complex inheritance chains.
+
+     2)Inheritance: You use this when one class is a specific type of another. A Car is a vehicle. A Dog is an Animal.
+class Engine():
+	def start(self):
+		return "Voorm!"
+
+class Car():
+	def __init__(self):
+		self.engine = Engine()
+		self.wheel = 4
+	def star(self):
+		return self.engine.start
+
+my_car = Car()
+print(my_car.start())
+

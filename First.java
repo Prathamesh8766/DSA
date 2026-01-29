@@ -1,0 +1,38 @@
+class First{
+
+public static void main(String[] args){
+
+    int[] arr = new int{1,2,3,4,5,6};
+    // int bsVal = bs(arr,5);
+    System.out.println(bs(arr,5));
+
+}
+
+static int bs(int[] arr,int target){
+   int l=0;
+   int r=arr.length-1;
+
+   while(l<r){
+    int mid = l + r /2;
+
+    if(arr[mid] == target) return mid;
+
+    if(arr[mid ] > target){
+        l = mid + 1;
+
+    }
+    else{
+        r = mid - 1;
+    }
+   }
+   return -1;
+
+
+}
+
+
+
+
+
+
+}
