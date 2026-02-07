@@ -16,3 +16,4 @@ def majorityElement(nums): # Using Mooris voting algorithm
 print(majorityElement([7,7,5,1,5,7,5,7,5,5,5,5]))
 nums=[7,7,5,1,5,7,5,7,5,5,5,5]
 print(f"len= {len(nums)} and {int(len(nums) / 3 + 1)}")
+print(majorityElement([3,3,4]))

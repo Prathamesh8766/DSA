@@ -42,7 +42,7 @@ class Circle:
                 self__radius = new_radius
         @radius.deleter
         def radius(self):
-                del self.__radius 
+               3 del self.__radius 
         def area(self):
                 return 3.14*(self.__radius**2)
 c= Circle(5)
