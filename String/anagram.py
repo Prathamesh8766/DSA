@@ -17,3 +17,6 @@ t = "nagaram"
 obj = Solution()
 print(obj.isAnagram(s,t))
 print(obj.isAnagram("car","rat"))
+char = "a"
+r = char*3
+print(char+r)
