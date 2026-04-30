@@ -67,7 +67,21 @@ class DoubleLinklist:
             print("List is empty")
         self.head = self.head.next
         self.head.pre = None
-        
+    def middleNode(self):
+        current = self.head
+        l =0
+        a = []
+        pre_mid = None
+        while current:
+            l += 1
+            mid = -(-l//2) 
+            a.append(current.data)
+            if mid == pre_mid :
+                a.pop(0)
+            pre_mid = mid
+            current = current.next
+        return a
+
 
     
     
@@ -75,9 +89,9 @@ class DoubleLinklist:
 
 l1 = DoubleLinklist()
 l1.creationOfDoubleLinklist()
+print(l1.middleNode())
 l1.display()
-l1.append()
-l1.display(True)
-l1.deleteHead()
-l1.display()
-    
+# l1.append()
+# l1.display(True)
+# l1.deleteHead()
+# l1.display()
