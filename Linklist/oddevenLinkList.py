@@ -1,29 +1,22 @@
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-from collections import deque
-def oddeven(head):
+def evenOdd()
         even = deque()
         odd = deque()
+        flag = 1
         current = head
         while current:
-            if current.val %2 ==0:
-                even.append(current.val)
-            else :
+            if flag == 1:
                 odd.append(current.val)
-        if currem.val %2 ==0:
-            start = even
-            end = odd
-        else: 
-            start = odd
-            end = even
-        current = head
-        while start :
-            current.val = start.popleft()
+                flag = 0
+            else:
+                flag = 1
+                even.append(current.val)
             current = current.next
-        while end:
-            current.val= edd.popleft()
-            current =current.next 
+        print(odd,even)
+        current = head
+        while odd:
+            current.val = odd.popleft()
+            current = current.next
+        while even:
+            current.val = even.popleft()
+            current = current.next
         return head
