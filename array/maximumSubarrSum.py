@@ -15,4 +15,3 @@ def kadanesAlgorithm(nums):
                 sum=0
 
         return max_sum  , nums[start:end+1]
-print(kadanesAlgorithm([-2,-3,4,-2,-2,1,5,-3]))

@@ -1,22 +1,22 @@
 
-arr=[9,87,47,3,2,45,64,7]
+# arr=[9,87,47,3,2,45,64,7]
 
 
-def quick_sort(arr, start, end):
-    if start >= end:
-        return
-    def partition(arr, start, end):
-        index = start - 1
-        for j in range(start, end):
-            if arr[j] < arr[end]:
-                index += 1
-                arr[index], arr[j] = arr[j], arr[index]
+# def quick_sort(arr, start, end):
+#     if start >= end:
+#         return
+#     def partition(arr, start, end):
+#         index = start - 1
+#         for j in range(start, end):
+#             if arr[j] < arr[end]:
+#                 index += 1
+#                 arr[index], arr[j] = arr[j], arr[index]
 
-        arr[index + 1], arr[end] = arr[end], arr[index + 1]
-        return index + 1
-    pivot = partition(arr, start, end)
-    quick_sort(arr, start, pivot - 1)
-    quick_sort(arr, pivot + 1, end)
+#         arr[index + 1], arr[end] = arr[end], arr[index + 1]
+#         return index + 1
+#     pivot = partition(arr, start, end)
+#     quick_sort(arr, start, pivot - 1)
+#     quick_sort(arr, pivot + 1, end)
 
 
 
@@ -49,10 +49,11 @@ def merge_sort(arr, start, end):
         return
 
     mid = start + (end - start) // 2
+    print(start, end, mid)
 
     merge_sort(arr, start, mid)
     merge_sort(arr, mid + 1, end)
-
+   
     temp = []
     left = start
     right = mid + 1
@@ -77,6 +78,7 @@ def merge_sort(arr, start, end):
     for i in range(len(temp)):
         arr[start + i] = temp[i]
 
-arr = [6, 3, 9, 5, 2, 8]
+arr = [16, 15, 14, 13, 12, 11]
 merge_sort(arr, 0, len(arr) - 1)
 print("Sorted array:", arr)
+print(1//2)
