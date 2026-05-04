@@ -12,11 +12,11 @@ class LinkList:
         size = int(input("Enter the size of linList:"))
         if size <=0:
             return None
-        self.head = Node(input("Enter the data for head node:"))
+        self.head = Node(int(input("Enter the data for head node:")))
         current = self.head
 
         for i in range(1,size):
-            data = input("Enter data:")
+            data = int(input("Enter data:"))
             new_node = Node(data)
             current.next = new_node
             current = new_node
@@ -30,7 +30,7 @@ class LinkList:
         print("None")
 
     def insetAtHead(self): # Insert At Head
-        new_node = Node(input("Enter New head Data:"), self.head)
+        new_node = Node(int(input("Enter New head Data:")), self.head)
         self.head = new_node
         return self.head
 
