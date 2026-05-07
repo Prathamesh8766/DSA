@@ -37,7 +37,7 @@ def arrayElementRemovel():
     arr = list(map(int, input().split(",")))
     steps = 0
 
-    arr.sort()   # ✅ fixed
+    arr.sort()  
 
     if len(arr) == 0:
         return 0
