@@ -13,10 +13,11 @@ def dfsTraversel(adj,start):
     
     
 adj = {
-    0:[1,2,3],
-    1:[0,1,2,3],
-    2:[5,6],
-    5:[7,8],
-    6:[10,1]
+    1:[2,6],
+    2:[1,9,3],
+    3:[2,4],
+    4:[3,5],
+    5:[4,11,6],
+    6:[1,10]
 }
-print(dfsTraversel(adj,2))
+print(dfsTraversel(adj,1))
