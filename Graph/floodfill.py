@@ -12,7 +12,7 @@ def floodFill(matrix,colour,sr,sc):
         r,c = q.get()
         print(f"R  is {r} and C is {c}")
         for i in range(4):
-            nrow = drow[i]+r
+            nrow = drow[i] + r
             ncol = dclo[i] +c
             if nrow >= 0 and nrow < len(matrix) and ncol >= 0 and ncol < len(matrix[0]) and visited[nrow][ncol] != colour and matrix[nrow][ncol] != 0:
                 print(f"nrow {nrow} and crow is {ncol}")
