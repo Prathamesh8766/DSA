@@ -30,5 +30,5 @@ def cycle(prerequisites,numCourses):
 
 
 print(cycle(numCourses = 6,
-prerequisites =[[1,0]]))
+prerequisites =[[1,0],[0,1]]))
 
