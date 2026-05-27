@@ -5,7 +5,7 @@ def fiendEventualSafeNode(graph):
     def dfs(node):
         if visited[node] == 1: return False
         visited[node] = 1
-        if visited==2 : return True
+        if visited[node]==2 : return True
         for i in graph[node]:
             if dfs(i) == False:
                 return False
