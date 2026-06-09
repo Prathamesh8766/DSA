@@ -5,6 +5,7 @@ def bipartite(graph):
     for i in range(len(graph)):
 
         adj[i] = graph[i]
+    print(adj)
     visited = [0]*len(adj)
     def dfs(node,color):
 
@@ -18,4 +19,4 @@ def bipartite(graph):
         if visited[i] == 0:
             if dfs(i,1) == False: return False
     return True
-print(bipartite([[1,2,3],[0,2],[0,1,3],[0,2]]))
+print(bipartite([[1,2],[2,3],[5],[0],[5],[],[]]))
